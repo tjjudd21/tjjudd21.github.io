@@ -1,0 +1,530 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Trevor Judd - Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Custom styles for tab content */
+			.tab-content {
+				display: none;
+			}
+			.tab-content.active {
+				display: block;
+			}
+			
+			/* Ensure nav stays visible */
+			#nav {
+				position: sticky;
+				top: 0;
+				z-index: 1000;
+				background: #1e252d;
+			}
+			
+			/* Style for About Me section */
+			.about-section {
+				background: #f5f5f5;
+				padding: 3em 2em;
+				margin: 2em 0;
+				border-radius: 8px;
+			}
+			
+			.about-section h2 {
+				color: #717981;
+				font-family: "Gentium Book Basic", Georgia, serif;
+				font-size: 1.5em;
+				margin-bottom: 1em;
+			}
+			
+			.about-section p {
+				font-weight: 300;
+				letter-spacing: 0.05em;
+				line-height: 1.8;
+			}
+			
+			.skills-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 2em;
+				margin: 2em 0;
+			}
+			
+			.skill-category h3 {
+				color: #F1C863;
+				margin-bottom: 0.5em;
+			}
+			
+			.skill-category ul {
+				list-style: none;
+				padding-left: 0;
+			}
+			
+			.skill-category li {
+				padding: 0.3em 0;
+				border-bottom: 1px solid #e0e0e0;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+		<div id="wrapper" class="fade-in">
+
+			<!-- Intro -->
+			<div id="intro">
+				<h1>Trevor J. Judd<br/>
+					Software Engineer</h1>
+				<p>Test Automation Engineer | Full-Stack Developer | Air Force Veteran</p>
+				<ul class="actions">
+					<li><a href="#nav" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+				</ul>
+			</div>
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul class="links">
+					<li class="active"><a href="#" data-tab="home">Home</a></li>
+					<li><a href="#" data-tab="about">About Me</a></li>
+					<li><a href="#" data-tab="webdev">WebDev</a></li>
+					<li><a href="#" data-tab="algorithms">Algorithms</a></li>
+					<li><a href="#" data-tab="games">Games</a></li>
+					<li><a href="#" data-tab="misc">Misc</a></li>
+					<li><a href="#" data-tab="skills">Skills</a></li>
+					<li><a href="#" data-tab="contact">Contact</a></li>
+				</ul>
+				<ul class="icons">
+					<li><a href="https://www.linkedin.com/in/trevor-judd-791b75194/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+					<li><a href="https://github.com/tjjudd21" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+				</ul>
+			</nav>
+
+			<!-- Main -->
+			<div id="main">
+
+				<!-- Home Tab -->
+				<div id="home" class="tab-content active">
+					<article class="post featured">
+						<header class="major">
+							<h2>Welcome to My Portfolio</h2>
+							<p>I am a software engineer and test automation specialist with a passion for creating robust, efficient solutions. 
+								With a military background and a Computer Science degree from Tennessee Tech University, 
+								I bring discipline, attention to detail, and strong problem-solving skills to every project.</p>
+						</header>
+						<a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
+						<p>Currently employed at Dynetics, Inc (a Leidos company), I specialize in test automation, full-stack development, 
+							and creating scalable software solutions. Explore my portfolio to see my projects, skills, and experience.</p>
+					</article>
+				</div>
+
+				<!-- About Me Tab -->
+				<div id="about" class="tab-content">
+					<article class="post featured">
+						<header class="major">
+							<h2>About Trevor Judd</h2>
+						</header>
+						
+						<div class="about-section">
+							<h2>Background</h2>
+							<p>I am a veteran of the United States Air Force and a 2020 graduate of Tennessee Tech University's Computer Science program. 
+								Currently, I work as a software engineer at Dynetics supporting Redstone Arsenal, where I apply my skills in test automation 
+								and software development to deliver high-quality solutions.</p>
+						</div>
+
+						<div class="about-section">
+							<h2>Military Service</h2>
+							<p>I served in the Air Force from 2009 to 2015 as a nuclear ICBM Mechanical Maintenance Technician, working on the 
+								Minuteman III weapon system. I was stationed at F.E. Warren AFB in Cheyenne, Wyoming, and was awarded the 
+								Air Force Achievement Medal for meritorious service. This experience taught me discipline, attention to detail, 
+								and the ability to work under pressure.</p>
+						</div>
+
+						<div class="about-section">
+							<h2>Journey & Locations</h2>
+							<p>Originally from Cookeville, Tennessee, my journey has taken me across the country and around the world. After my 
+								military service ended in 2015, I lived in Fort Collins, Colorado for two years before returning  to my hometown to 
+								pursue my education and career in software engineering. I currently reside in Elkmont, Alabama, and work in Huntsville. 
+								</p>
+						</div>
+
+						<div class="about-section">
+							<h2>Career Goals</h2>
+							<p>In ten years, I aim to be a senior software engineer or data scientist, leveraging big data and machine learning to 
+								solve complex problems. Looking further ahead, my fifteen-year goal is to serve as the Chief Technology Officer 
+								of a major corporation, where I can drive innovation and technological strategy at the highest level.</p>
+							<p>I'm particularly interested in the field of automatic theorem proving, combining my automation background with
+								functional programming to enhance software verification.</p>
+						</div>
+
+						<div class="about-section">
+							<h2>Why Software Engineering?</h2>
+							<p>Writing a computer program is like building a complex machine from scratch, piece by piece. I get an enormous 
+								amount of satisfaction from solving problems using technology. The ability to create something from nothing, 
+								to automate processes, and to build tools that make people's lives easier drives my passion for this field.</p>
+						</div>
+					</article>
+				</div>
+
+				<!-- web development tab -->
+				<div id="webdev" class="tab-content">
+					<header class="major">
+						<h2>Web Development</h2>
+						<p>A showcase of web applications and automated UI testing projects</p>
+					</header>
+
+					<section class="posts">
+						<article>
+							<header>
+								<h2>Project 1</h2>
+								<span class="date">Python | Selenium | SW Test</span>
+							</header>
+							<a href="https://www.youtube.com/playlist?list=PLN51OVIn5cZAm_cC4UP2-ceBtlI2Nzj-2" class="image fit"><img src="images/selenium-python.png" alt="" /></a>
+							<p>This is a course on automated UI testing I developed based on the skills I acquired as a test automation engineer. It includes a comprehensive 
+								breakdown of tools, libraries, Agile testing, and coding demonstrations using Python, selenium, and unittest. </p>
+							<ul class="actions special">
+								<li><a href="https://www.youtube.com/playlist?list=PLN51OVIn5cZAm_cC4UP2-ceBtlI2Nzj-2" class="button">View Demo</a></li>
+							</ul>
+						</article>
+						
+						<article>
+							<header>
+								<h2>Project 2</h2>
+								<span class="date">ASP.NET Core | Angular | SQL Server</span>
+							</header>
+							<a href="https://www.youtube.com/playlist?list=PLN51OVIn5cZCFzql03OrtIbLQEMfBQZN7" class="image fit">
+								<img src="images/pic02.jpg" alt="" />
+							</a>
+							<p>I built a full-stack web application from scratch using ASP.NET Core for the backend, Angular 10 for the frontend, 
+								and SQL Server for the database. The application features a comprehensive planet registry system with full CRUD 
+								operations. Includes automated UI testing with Python and Selenium WebDriver.</p>
+							<ul class="actions special">
+								<li><a href="https://www.youtube.com/playlist?list=PLN51OVIn5cZCFzql03OrtIbLQEMfBQZN7" class="button">View Demo</a></li>
+							</ul>
+						</article>
+
+						<article>
+							<header>
+								<h2>Project 3</h2>
+								<span class="date">ASP.NET MVC | C#</span>
+							</header>
+							<a href="https://www.youtube.com/playlist?list=PLN51OVIn5cZDuoANQvYa_rV4AWOXvXLza" class="image fit"><img src="images/asp.net-core-mvc.png" alt="" /></a>
+							<p>In this project, I take an old coding assignment from college and turn it into a web-based application using ASP.NET Core 6.0 MVC. The application
+								is a database of movies, and the user can create, edit, and delete entries stored in a database.</p>
+							<ul class="actions special">
+								<li><a href="https://www.youtube.com/playlist?list=PLN51OVIn5cZDuoANQvYa_rV4AWOXvXLza" class="button">View Demo</a></li>
+							</ul>
+						</article>
+					</section>
+				</div>					
+
+				<!-- Algorithms Tab -->
+				<div id="algorithms" class="tab-content">
+					<header class="major">
+						<h2>Algorithms</h2>
+						<p>A showcase of projects based on data structures and algorithms</p>
+					</header>
+					
+					<section class="posts">
+						<article>
+							<header>
+								<h2>Krusty Krab Restaurant System</h2>
+								<span class="date">C++ | Binary Search Trees</span>
+							</header>
+							<a href="https://github.com/tjjudd21/krabbypatty" class="image fit"><img src="images/pic03.jpg" alt="" />
+							</a>
+							<p>Developed a customer management system for the Krusty Krab restaurant using Binary Search Trees for efficient 
+								data storage and retrieval. Features include customer data entry, removal, statistical analysis, and search 
+								functionality with optimized performance.</p>
+							<ul class="actions special">
+								<li><a href="https://github.com/tjjudd21/krabbypatty" class="button">View Code</a></li>
+							</ul>
+						</article>
+
+						<article>
+							<header>
+								<h2>Topological Sort Algorithm</h2>
+								<span class="date">C++| Graph Theory | Sorting</span>
+							</header>
+							<a href="https://github.com/tjjudd21/topologicalSort" class="image fit"><img src="images/pic04.jpg" alt="" />
+							</a>
+							<p>Implementation of a topological sorting algorithm for Directed Acyclic Graphs (DAG). This project demonstrates 
+								understanding of graph theory and algorithmic problem-solving.</p>
+							<ul class="actions special">
+								<li><a href="https://github.com/tjjudd21/topologicalSort" class="button">View Code</a></li>
+							</ul>
+						</article>
+
+						<article>
+							<header>
+								<h2>Minimax Algorithm</h2>
+								<span class="date">Python | React.js | Decision Tree</span>
+							</header>
+							<a href="https://github.com/tjjudd21/Tic-Tac-Toe" class="image fit"><img src="images/minimax-3.jpg" alt="" /></a>
+							<p>For this project, I've written a Web-based game of Tic-Tac-Toe in React.js equipped with a bot powered by a minimax algorithm. 
+								Included is a Python script that simulates user input using Selenium to interact with the UI.</p>
+							<ul class="actions special">
+								<li><a href="https://github.com/tjjudd21/Tic-Tac-Toe" class="button">View Code</a>
+									<a href="https://www.youtube.com/playlist?list=PLN51OVIn5cZDyPa8qcg8QPFjRuJcB9KQT" class="button">View Demo</a>
+								</li>
+							</ul>
+						</article>
+					</section>
+				</div>
+
+				<!-- Games Tab -->
+				<div id="games" class="tab-content">
+					<header class="major">
+						<h2>Games</h2>
+						<p>A showcase of games written in C++, Java, and Python</p>
+					</header>
+
+					<section class="posts">
+						<article>
+							<header>
+								<h2>Blackjack Game</h2>
+								<span class="date">Java | Object-Oriented Design</span>
+							</header>
+							<a href="https://github.com/tjjudd21/blackjack" class="image fit">
+								<img src="images/pic05.jpg" alt="" />
+							</a>
+							<p>A fully functional Blackjack game written in Java, demonstrating object-oriented programming principles, 
+								game logic implementation, and user interface design.</p>
+							<ul class="actions special">
+								<li><a href="https://github.com/tjjudd21/blackjack" class="button">View Code</a></li>
+							</ul>
+						</article>
+					</section>
+				</div>
+
+				<!-- Misc Tab -->
+				<div id="misc" class="tab-content">
+					<header class="major">
+						<h2>Misc</h2>
+						<p>Data Science and Cybersecurity</p>
+					</header>
+
+					<section class="posts">
+						<article>
+							<header>
+								<h2>Recommendation Engine</h2>
+								<span class="date">R | Machine Learning | Kaggle</span>
+							</header>
+							<a href="https://github.com/tjjudd21/RecommendationEngine/blob/master/RecommendationEngineReport.pdf" class="image fit">
+								<img src="images/pic06.jpg" alt="" />
+							</a>
+							<p>Developed a recommendation engine for a Kaggle competition using R and statistical modeling. The system 
+								recommends optimally challenging math problems to students based on their previous performance using 
+								machine learning algorithms.</p>
+							<ul class="actions special">
+								<li><a href="https://github.com/tjjudd21/RecommendationEngine" class="button">View Report</a></li>
+							</ul>
+						</article>
+
+						<article>
+							<header>
+								<h2>IDS-ANN Research Paper</h2>
+								<span class="date">Cybersecurity | Neural Networks</span>
+							</header>
+							<a href="https://github.com/tjjudd21/IDS-ANN/blob/main/The%20Emerging%20Role%20of_Final.pdf" class="image fit">
+								<img src="images/pic07.jpg" alt="" />
+							</a>
+							<p>Academic research paper on behavior-based Intrusion Detection Systems powered by Artificial Neural Networks. 
+								This senior-level cybersecurity project explores the intersection of machine learning and network security.</p>
+							<ul class="actions special">
+								<li><a href="https://github.com/tjjudd21/IDS-ANN/blob/main/The%20Emerging%20Role%20of_Final.pdf" class="button">Read Paper</a></li>
+							</ul>
+						</article>
+					</section>
+				</div>
+
+				<!-- Skills Tab -->
+				<div id="skills" class="tab-content">
+					<article class="post featured">
+						<header class="major">
+							<h2>Technical Skills & Experience</h2>
+						</header>
+						
+						<div class="skills-grid">
+							<div class="skill-category">
+								<h3>Programming Languages</h3>
+								<ul>
+									<li><strong>Experienced:</strong> C++, Python</li>
+									<li><strong>Proficient:</strong> Java, SQL, R</li>
+									<li><strong>Learning:</strong> C#, HTML5, JavaScript</li>
+								</ul>
+							</div>
+							
+							<div class="skill-category">
+								<h3>Frameworks & Technologies</h3>
+								<ul>
+									<li>ASP.NET Core</li>
+									<li>Angular</li>
+									<li>Selenium</li>
+									<li>SQL Server</li>
+								</ul>
+							</div>
+							
+							<div class="skill-category">
+								<h3>Methodologies & Practices</h3>
+								<ul>
+									<li>DevSecOps</li>
+									<li>SAFe Agile</li>
+									<li>Gitlab</li>
+									<li>Azure</li>
+								</ul>
+							</div>
+							
+							<div class="skill-category">
+								<h3>Domain Knowledge</h3>
+								<ul>
+									<li>Software Development</li>
+									<li>Software Testing</li>
+									<li>Test Automation</li>
+									<li>Cybersecurity</li>
+								</ul>
+							</div>
+						</div>
+						
+						<div class="about-section">
+							<h2>Professional Experience</h2>
+							<h3>Software Engineer - Dynetics, Incorporated</h3>
+							<p>Currently supporting development for automonous systems, applying test automation techniques
+								to ensure continuous integration and interoperability of Uncrewed Aircraft applications.</p>
+
+							<h3>Software Engineer - General Dynamics Mission Systems</h3>
+							<p>Worked on critical defense systems, applying test automation and software development 
+								best practices to ensure reliability and performance of mission-critical applications.</p>
+							
+							<h3>Nuclear ICBM Mechanical Maintenance Technician - U.S. Air Force (2009-2015)</h3>
+							<p>Maintained and serviced Minuteman III weapon systems at F.E. Warren AFB. Awarded the Air Force 
+								Achievement Medal for meritorious service. Developed strong attention to detail and ability to 
+								work in high-pressure environments.</p>
+						</div>
+						
+						<div class="about-section">
+							<h2>Education</h2>
+							<h3>Bachelor of Science in Computer Science</h3>
+							<p><strong>Tennessee Tech University</strong> - Class of 2020</p>
+							<p>Focused on software engineering, algorithms, data structures, and cybersecurity. Completed multiple 
+								complex projects demonstrating proficiency in various programming languages and technologies.</p>
+						</div>
+					</article>
+				</div>
+
+				<!-- Contact Tab -->
+				<div id="contact" class="tab-content">
+					<article class="post featured">
+						<header class="major">
+							<h2>Get In Touch</h2>
+							<p>I'm always interested in new opportunities and collaborations</p>
+						</header>
+						
+						<section class="split contact">
+							<section class="alt">
+								<h3>Location</h3>
+								<p>22066 Hays Mill Rd.<br />
+								Elkmont, AL 35620</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="tel:931-252-6477">(931) 252-6477</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="mailto:tjjudd@gmail.com">tjjudd@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons">
+									<li><a href="https://www.linkedin.com/in/trevor-judd-791b75194/" class="icon brands fa-linkedin">
+										<span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/tjjudd21" class="icon brands fa-github">
+										<span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+						
+						<div style="text-align: center; margin-top: 3em;">
+							<h3>Connect With Me</h3>
+							<p>Whether you're interested in discussing potential opportunities, collaborating on projects, 
+								or just want to connect, I'd love to hear from you. Feel free to reach out through any of 
+								the channels above.</p>
+							<ul class="actions" style="justify-content: center;">
+								<li><a href="https://www.linkedin.com/in/trevor-judd-791b75194/" class="button primary large">LinkedIn Profile</a></li>
+								<li><a href="https://github.com/tjjudd21" class="button large">GitHub Profile</a></li>
+							</ul>
+						</div>
+					</article>
+				</div>
+
+			</div>
+
+			<!-- Footer -->
+			<footer id="footer">
+				<section class="split contact">
+					<section>
+						<h3>Trevor J. Judd</h3>
+						<p>Software Engineer | Test Automation Specialist</p>
+					</section>
+					<section>
+						<h3>Connect</h3>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/trevor-judd-791b75194/" class="icon brands fa-linkedin">
+								<span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/tjjudd21" class="icon brands fa-github">
+								<span class="label">GitHub</span></a></li>
+						</ul>
+					</section>
+				</section>
+			</footer>
+
+			<!-- Copyright -->
+			<div id="copyright">
+				<ul><li>&copy; Trevor J. Judd 2024</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+			</div>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		
+		<!-- Tab switching script -->
+		<script>
+			$(document).ready(function() {
+				// Handle tab clicks
+				$('#nav .links a').click(function(e) {
+					e.preventDefault();
+					
+					// Get the tab to show
+					var tabId = $(this).data('tab');
+					
+					// Update active states
+					$('#nav .links li').removeClass('active');
+					$(this).parent().addClass('active');
+					
+					// Hide all tabs and show the selected one
+					$('.tab-content').removeClass('active');
+					$('#' + tabId).addClass('active');
+					
+					// Scroll to top of main content
+					$('html, body').animate({
+						scrollTop: $('#nav').offset().top
+					}, 500);
+				});
+			});
+		</script>
+
+	</body>
+</html>
