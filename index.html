@@ -112,14 +112,14 @@
 			<!-- Nav -->
 			<nav id="nav">
 				<ul class="links">
-					<li class="active"><a href="#" data-tab="home">Home</a></li>
-					<li><a href="#" data-tab="about">About Me</a></li>
-					<li><a href="#" data-tab="webdev">WebDev</a></li>
-					<li><a href="#" data-tab="algorithms">Algorithms</a></li>
-					<li><a href="#" data-tab="games">Games</a></li>
-					<li><a href="#" data-tab="misc">Misc</a></li>
-					<li><a href="#" data-tab="skills">Skills</a></li>
-					<li><a href="#" data-tab="contact">Contact</a></li>
+					<li class="active"><a href="#home" data-tab="home">Home</a></li>
+					<li><a href="#about" data-tab="about">About Me</a></li>
+					<li><a href="#webdev" data-tab="webdev">WebDev</a></li>
+					<li><a href="#algorithms" data-tab="algorithms">Algorithms</a></li>
+					<li><a href="#games" data-tab="games">Games</a></li>
+					<li><a href="#misc" data-tab="misc">Misc</a></li>
+					<li><a href="#skills" data-tab="skills">Skills</a></li>
+					<li><a href="#contact" data-tab="contact">Contact</a></li>
 				</ul>
 				<ul class="icons">
 					<li><a href="https://www.linkedin.com/in/trevor-judd-791b75194/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
@@ -557,59 +557,62 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-
-		<!-- Tab switching script (mobile-safe) -->
+		
+		<!-- Tab switching script -->
 		<script>
-		(function () {
-			// Activate a tab by id
-			function activateTab(tabId) {
-			if (!tabId) return;
+/* Hash-based tab router: works with HTML5 UP mobile panel */
+(function () {
+  function activateTabFromHash() {
+    var hash = (location.hash || '').replace('#', '');
+    // Fallback to first tab if invalid/missing
+    if (!hash || !document.getElementById(hash)) {
+      var first = document.querySelector('.tab-content')?.id;
+      if (!first) return;
+      hash = first;
+      if (location.hash !== '#' + first) history.replaceState(null, '', '#' + first);
+    }
+    // Toggle tab content
+    document.querySelectorAll('.tab-content').forEach(function(el){ el.classList.remove('active'); });
+    var target = document.getElementById(hash);
+    if (target) target.classList.add('active');
 
-			// Toggle active tab content
-			document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-			const target = document.getElementById(tabId);
-			if (target) target.classList.add('active');
+    // Toggle nav "active" class across desktop and mobile clones
+    document.querySelectorAll('a[data-tab]').forEach(function(a){
+      var li = a.parentElement;
+      if (li && li.tagName === 'LI') li.classList.toggle('active', a.getAttribute('data-tab') === hash);
+    });
 
-			// Toggle active nav item (both desktop and any mobile clones)
-			document.querySelectorAll('a[data-tab]').forEach(a => a.parentElement?.classList.remove('active'));
-			document.querySelectorAll(`a[data-tab="${tabId}"]`).forEach(a => a.parentElement?.classList.add('active'));
+    // Close common HTML5UP mobile panel classes (defensive)
+    document.body.classList.remove('is-menu-visible');
+    var panel = document.getElementById('navPanel');
+    if (panel) panel.classList.remove('visible');
 
-			// Close mobile panel if the theme uses one
-			// (HTML5 UP panels commonly add a class on <body> or a visible panel element)
-			document.body.classList.remove('is-menu-visible');         // common in HTML5UP
-			var navPanel = document.getElementById('navPanel');        // if present in this theme
-			if (navPanel) navPanel.classList.remove('visible');
+    // Keep behavior consistent
+    var nav = document.getElementById('nav');
+    if (nav && typeof window.scrollTo === 'function') {
+      window.scrollTo({ top: nav.offsetTop, behavior: 'smooth' });
+    }
+  }
 
-			// Keep behavior consistent
-			const nav = document.getElementById('nav');
-			if (nav) window.scrollTo({ top: nav.offsetTop, behavior: 'smooth' });
-			}
+  // Initialize on DOM ready and on hash changes
+  document.addEventListener('DOMContentLoaded', activateTabFromHash);
+  window.addEventListener('hashchange', activateTabFromHash);
 
-			// Delegated handler: works for desktop nav and mobile off-canvas clones
-			document.addEventListener('click', function (e) {
-			const a = e.target.closest('a[data-tab]');
-			if (!a) return;
-			e.preventDefault(); // only for tab links
-			const tabId = a.getAttribute('data-tab');
-			activateTab(tabId);
-			// Update hash for deep-linking/back button friendliness
-			if (tabId) history.replaceState(null, '', '#' + tabId);
-			});
-
-			// On load: if URL has #<tab>, activate it; otherwise ensure initial "active" stays consistent
-			window.addEventListener('DOMContentLoaded', function () {
-			const hash = (location.hash || '').replace('#', '');
-			if (hash && document.getElementById(hash)) {
-				activateTab(hash);
-			} else {
-				// Ensure first active link matches first active content
-				const initial = document.querySelector('.tab-content.active')?.id || 'home';
-				activateTab(initial);
-			}
-			});
-		})();
-		</script>
+  // Also intercept clicks on data-tab links to set hash explicitly (without blocking default)
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[data-tab]');
+    if (!a) return;
+    var tabId = a.getAttribute('data-tab');
+    if (!tabId) return;
+    // Let default anchor behavior update location.hash; just normalize if needed
+    if (a.getAttribute('href') !== '#' + tabId) {
+      e.preventDefault();
+      history.pushState(null, '', '#' + tabId);
+      activateTabFromHash();
+    }
+  });
+})();
+</script>
 
 	</body>
-
 </html>
