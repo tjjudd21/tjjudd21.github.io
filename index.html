@@ -302,14 +302,14 @@
 
 						<article>
 							<header>
-								<h2>Lexicographic Permutations</h2>
-								<span class="date">C++ | Strings | Sorting</span>
+								<h2>Johnson-Trotter-Lex</h2>
+								<span class="date">C++ | Strings | Permutations</span>
 							</header>
-							<a href="https://github.com/tjjudd21/lexicographic_sort" class="image fit"><img src="images/lexicographic.jpg" alt="" /></a>
-							<p>A tiny C++ console program that prints the lexicographic permutations of an input string by implementing the classic next 
-								permutation step manually.</p>
+							<a href="https://github.com/tjjudd21/lexicographic-sort" class="image fit"><img src="images/lexicographic.jpg" alt="" /></a>
+							<p>A tiny C++ console program that reads a string from stdin, then generates and prints permutations either by Johnson-Trotter 
+								(adjacent transpositions; requires all characters distinct) or by lexicographic order using std::next_permutation (handles duplicates).</p>
 							<ul class="actions special">
-								<li><a href="https://github.com/tjjudd21/lexicographic_sort" class="button">View Code</a></li>
+								<li><a href="https://github.com/tjjudd21/lexicographic-sort" class="button">View Code</a></li>
 							</ul>
 						</article>
 					</section>
@@ -557,33 +557,58 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-		
-		<!-- Tab switching script -->
+
+		<!-- Tab switching script (mobile-safe) -->
 		<script>
-			$(document).ready(function() {
-				// Handle tab clicks
-				$('#nav .links a').click(function(e) {
-					e.preventDefault();
-					
-					// Get the tab to show
-					var tabId = $(this).data('tab');
-					
-					// Update active states
-					$('#nav .links li').removeClass('active');
-					$(this).parent().addClass('active');
-					
-					// Hide all tabs and show the selected one
-					$('.tab-content').removeClass('active');
-					$('#' + tabId).addClass('active');
-					
-					// Scroll to top of main content
-					$('html, body').animate({
-						scrollTop: $('#nav').offset().top
-					}, 500);
-				});
+		(function () {
+			// Activate a tab by id
+			function activateTab(tabId) {
+			if (!tabId) return;
+
+			// Toggle active tab content
+			document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+			const target = document.getElementById(tabId);
+			if (target) target.classList.add('active');
+
+			// Toggle active nav item (both desktop and any mobile clones)
+			document.querySelectorAll('a[data-tab]').forEach(a => a.parentElement?.classList.remove('active'));
+			document.querySelectorAll(`a[data-tab="${tabId}"]`).forEach(a => a.parentElement?.classList.add('active'));
+
+			// Close mobile panel if the theme uses one
+			// (HTML5 UP panels commonly add a class on <body> or a visible panel element)
+			document.body.classList.remove('is-menu-visible');         // common in HTML5UP
+			var navPanel = document.getElementById('navPanel');        // if present in this theme
+			if (navPanel) navPanel.classList.remove('visible');
+
+			// Keep behavior consistent
+			const nav = document.getElementById('nav');
+			if (nav) window.scrollTo({ top: nav.offsetTop, behavior: 'smooth' });
+			}
+
+			// Delegated handler: works for desktop nav and mobile off-canvas clones
+			document.addEventListener('click', function (e) {
+			const a = e.target.closest('a[data-tab]');
+			if (!a) return;
+			e.preventDefault(); // only for tab links
+			const tabId = a.getAttribute('data-tab');
+			activateTab(tabId);
+			// Update hash for deep-linking/back button friendliness
+			if (tabId) history.replaceState(null, '', '#' + tabId);
 			});
+
+			// On load: if URL has #<tab>, activate it; otherwise ensure initial "active" stays consistent
+			window.addEventListener('DOMContentLoaded', function () {
+			const hash = (location.hash || '').replace('#', '');
+			if (hash && document.getElementById(hash)) {
+				activateTab(hash);
+			} else {
+				// Ensure first active link matches first active content
+				const initial = document.querySelector('.tab-content.active')?.id || 'home';
+				activateTab(initial);
+			}
+			});
+		})();
 		</script>
 
 	</body>
-
 </html>
